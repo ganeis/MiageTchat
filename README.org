@@ -46,7 +46,7 @@ Nous avons choisi parmi les projets disponibles (Dames, Jeux etc..),le projet Mi
    - Required :
    - Success Response :
      - Code : =200=
-     - Content : ={
+     - Content : {
             "Function": [
                {
                 "Lien":  "http://localhost:5000/MiageTchat/Connexion",
@@ -64,7 +64,7 @@ Nous avons choisi parmi les projets disponibles (Dames, Jeux etc..),le projet Mi
                "Verbe": "GET"
                }
             ]
-         }=
+         }
    - Error Response 1 :
      - Code : =400 BAD REQUEST=
      - Content : =Erreur=
