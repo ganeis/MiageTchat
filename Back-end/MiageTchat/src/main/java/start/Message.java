@@ -5,9 +5,13 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
-  
-@Path("/hello")
-public class HelloWorldService {
+  /**
+ * REST Web Service
+ *
+ * @author ganeistan
+ */
+@Path("/Message")
+public class Message {
 	@Context
 	SecurityContext sctx;
     @GET

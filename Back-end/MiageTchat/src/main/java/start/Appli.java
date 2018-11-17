@@ -7,7 +7,11 @@ import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
 import filtre.AuthenticationFilter;
-
+/**
+ * REST Web Service
+ *
+ * @author ganeistan
+ */
 @ApplicationPath("api")
 public class Appli extends Application {
 
@@ -16,7 +20,10 @@ public class Appli extends Application {
         HashSet<Class<?>> classes = new HashSet<Class<?>>();
         classes.add(AuthenticationFilter.class);
         classes.add(Connexion.class);
-        classes.add(HelloWorldService.class);
+        classes.add(Inscription.class);
+        classes.add(Compte.class);
+        classes.add(Message.class);
+        classes.add(Utilisateurs.class);
         return classes;
     }
 }
