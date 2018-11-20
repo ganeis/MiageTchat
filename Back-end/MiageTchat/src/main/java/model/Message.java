@@ -5,6 +5,8 @@
  */
 package model;
 
+
+import java.util.Calendar;
 import java.sql.Date;
 
 /**
@@ -21,7 +23,7 @@ public class Message {
     public Message(int m,String t,Date d,String a){
         MsgId=m;
         Text=t;
-        Date_Hour=d;
+        Date_Hour=d;//new java.sql.Date(Calendar.getInstance().getTime().getTime());
         Author=a;
     }
     
