@@ -36,7 +36,7 @@ public class User {
     }
     public boolean newCompte(){
         Connection conn=DataBaseConnection.ConnexionBD();
-		try {PreparedStatement ps=conn.prepareStatement("insert into User (User_Id,First_Name,Last_Name,Birth_Year,Gender,Mail,Password) values (?,?,?,?,?,?,?)");
+		try {PreparedStatement ps=conn.prepareStatement("insert into User (User_Id,First_Name,Last_Name,Birth_Year,Gender,Mail,Password,Status) values (?,?,?,?,?,?,?,?)");
 		ps.setString(1, User_Id);
 		ps.setString(2,First_Name);//level toujours 0
 		ps.setString(3,Last_Name);
@@ -44,6 +44,7 @@ public class User {
                 ps.setString(5,Gender);
                 ps.setString(6,Mail);
                 ps.setString(7,Password);
+                ps.setBoolean(8,false);
 		ps.executeUpdate();
 		ps.close();
 

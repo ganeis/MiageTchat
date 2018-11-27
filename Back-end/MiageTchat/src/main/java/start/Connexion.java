@@ -126,7 +126,7 @@ public class Connexion {
 		ResultSet rs=ps.executeQuery();
 		while(rs.next()){
 			if(rs.getString(1).equals(a)){
-				//MenuLoginController.setError(err,"");
+				updateStatus(user);
 				return true;
 				
 			};
@@ -137,6 +137,21 @@ public class Connexion {
 		
 		//MenuLoginController.setError(err,"Mot de passe erroné");
 		return rep;
+}
+        public static void updateStatus(String user) throws SQLException, ClassNotFoundException{
+             System.out.print(user);
+		Connection conn=DataBaseConnection.ConnexionBD();
+                
+		try{
+		PreparedStatement ps=conn.prepareStatement("UPDATE `User` SET `Status`='"+true+"'WHERE User_Id='"+user+"'");
+		ps.executeUpdate();
+	
+		ps.close();
+		} catch (Exception e) {
+		System.out.println(e);
+		e.printStackTrace();
+}
+		
 }
 
 }

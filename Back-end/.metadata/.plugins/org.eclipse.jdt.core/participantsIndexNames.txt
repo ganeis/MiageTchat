@@ -1,5 +1,7 @@
 INDEX VERSION 1.131
 /Users/ganeistan/Desktop/M2 cours/AOS/projet/MiageTchat-back-end/Back-end/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/203974320.index
 /MiageTchat/src/main/resources
+/Users/ganeistan/Desktop/M2 cours/AOS/projet/MiageTchat-back-end/Back-end/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3136732295.index
+/MiageTchat/src/test/java
 /Users/ganeistan/Desktop/Back-end/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/203974320.index
 /MiageTchat/src/main/resources

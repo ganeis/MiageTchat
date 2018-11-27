@@ -5,8 +5,6 @@ import java.util.Set;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
-
-import filtre.AuthenticationFilter;
 /**
  * REST Web Service
  *
@@ -15,15 +13,20 @@ import filtre.AuthenticationFilter;
 @ApplicationPath("api")
 public class Appli extends Application {
 
+   
     @Override
     public Set<Class<?>> getClasses() {
-        HashSet<Class<?>> classes = new HashSet<Class<?>>();
-        classes.add(AuthenticationFilter.class);
-        classes.add(Connexion.class);
-        classes.add(Inscription.class);
-        classes.add(Compte.class);
-        classes.add(Message.class);
-        classes.add(Utilisateurs.class);
-        return classes;
+        HashSet<Class<?>> resources = new HashSet<Class<?>>();
+        addRestResourceClasses(resources);
+        return resources;
     }
+    
+    private void addRestResourceClasses(Set<Class<?>> resources) {
+        resources.add(start.Connexion.class);
+        resources.add(start.Compte.class);
+        resources.add(start.Inscription.class);
+        resources.add(start.Utilisateurs.class);
+        resources.add(start.Message.class);
+    }
+    
 }
