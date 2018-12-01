@@ -8,6 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.ejb.Local;
 import javax.ejb.Stateless;
+import javax.json.Json;
+import javax.json.JsonObject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -21,6 +23,7 @@ import javax.ws.rs.core.MediaType;
 
 //import com.madx.auth.credentials.Credentials;
 import jwt.JavaWebTokenUtility;
+import model.Messages;
 /**
  * REST Web Service
  *
@@ -28,6 +31,8 @@ import jwt.JavaWebTokenUtility;
  */
 @Path("/Connexion")
 @Stateless( name = "RestAuthResource", mappedName = "ejb/RestAuthResource" )
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class Connexion {
 
 	@Context
@@ -53,15 +58,20 @@ public class Connexion {
 			if(!authenticate(username, password)){
                             
                             return Response.status(Response.Status.NOT_ACCEPTABLE)
-                                    .entity("Mot de passe et/ou login incorrect")
+                                    .entity(jsonMe("Mot de passe et/ou login incorrect"))
                                     .build();
                         };
-
+                        Messages m=new Messages();
+                        int max=m.getMax();
 			// Issue a token for the user
 			String token = issueToken(username);
-
-			return Response.ok(username + " authenticated")
-					.header("jwt", token)
+                                 JsonObject jsonObject = Json.createObjectBuilder()
+                .add("token", token)
+                 .add("MsgId", max)
+                .build();
+			return Response.ok(jsonObject.toString())
+					.header("token", token)
+                                        .header("MsgId", max)
 					.build();
 		} catch (Exception e) {
 			return Response.status(Response.Status.UNAUTHORIZED).build();
@@ -71,7 +81,6 @@ public class Connexion {
 	private boolean authenticate(String username, String password) throws Exception {
 		boolean rep=false;
          //   if(verifLogin(username)){
-          System.out.print(username+"2");
                    if(verifPassword(password,username)) {
                        System.out.println("OK");
                        rep=true;
@@ -138,12 +147,18 @@ public class Connexion {
 		//MenuLoginController.setError(err,"Mot de passe erroné");
 		return rep;
 }
+        public String jsonMe(String msg){
+                                 JsonObject jsonObject = Json.createObjectBuilder()
+                .add("Message", msg)
+                .build();
+                                 return jsonObject.toString();
+     }
         public static void updateStatus(String user) throws SQLException, ClassNotFoundException{
              System.out.print(user);
 		Connection conn=DataBaseConnection.ConnexionBD();
                 
 		try{
-		PreparedStatement ps=conn.prepareStatement("UPDATE `User` SET `Status`='"+true+"'WHERE User_Id='"+user+"'");
+		PreparedStatement ps=conn.prepareStatement("UPDATE `User` SET `Status`='"+1+"'WHERE User_Id='"+user+"'");
 		ps.executeUpdate();
 	
 		ps.close();

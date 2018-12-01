@@ -5,7 +5,16 @@
  */
 package model;
 
+import DAO.DataBaseConnection;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
+import javax.json.JsonObject;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+
 
 /**
  *
@@ -14,20 +23,24 @@ import java.util.ArrayList;
 public class Tchat {
     private String Name;
     private ArrayList<User> list_user;
-    private ArrayList<Message> list_message;
+    private ArrayList<Messages> list_message;
     
     public Tchat(String n){
         Name=n;
     }
+
+    public Tchat() {
+     
+    }
     
-    public ArrayList<Message> getMessage(int i){
-        ArrayList<Message> rep = new ArrayList<Message>();
+    public ArrayList<Messages> getMessage(int i){
+        ArrayList<Messages> rep = new ArrayList<Messages>();
         
         
         return rep;
     }
     
-    public boolean post_Message(Message m){
+    public boolean post_Message(Messages m){
         return true;
     }
     
@@ -43,5 +56,64 @@ public class Tchat {
         
         
         return rep;
+    }
+
+    public int getMsg(int msgId) {
+        //return 0 si erreur
+        //return 1 si nouveau msg
+        //return 2 si pas de nouveau msg
+         Connection conn=DataBaseConnection.ConnexionBD();
+        try {PreparedStatement ps=conn.prepareStatement("Select * FROM Tchat WHERE MsgId>'"+msgId+"'");
+        ResultSet rs=ps.executeQuery();
+        if(rs.isBeforeFirst()){
+            return 2;
+        }
+		while(rs.next()){
+				Messages m=new Messages();
+				m.setMsgId(rs.getInt(1));
+				m.setText(rs.getString(2));
+				m.setDate_Hour(rs.getDate(3));
+				m.setAuthor(rs.getString(4));
+                               list_message.add(m);
+				
+
+					};
+					
+            ps.close();
+
+		} catch (Exception e) {
+		System.out.println(e);
+		e.printStackTrace();
+                return 0 ;
+}
+      return 1 ;  
+      
+    }
+
+    public ArrayList<User> getList_user() {
+        return list_user;
+    }
+
+    public void setList_user(ArrayList<User> list_user) {
+        this.list_user = list_user;
+    }
+
+    public ArrayList<Messages> getList_message() {
+        return list_message;
+    }
+
+    public void setList_message(ArrayList<Messages> list_message) {
+        this.list_message = list_message;
+    }
+    
+    public String jsonMe(){
+         JSONArray ja = new JSONArray();
+        for(Messages m:list_message){
+            JsonObject o=m.jsonMe();
+            ja.put(o);
+        }
+        JSONObject mainObj = new JSONObject();  
+        mainObj.put("Messages", ja);
+        return mainObj.toString();
     }
 }

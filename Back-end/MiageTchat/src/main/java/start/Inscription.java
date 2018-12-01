@@ -12,6 +12,8 @@ import annotation.Secured;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.json.Json;
+import javax.json.JsonObject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.HeaderParam;
 import javax.ws.rs.core.MediaType;
@@ -34,17 +36,17 @@ public class Inscription {
     public Response creeCompte(@HeaderParam("User_Id") String User_Id,@HeaderParam("First_Name") String First_Name,@HeaderParam("Last_Name") String Last_Name,@HeaderParam("Birth_Year") Integer Birth_Year,@HeaderParam("Gender") String Gender,@HeaderParam("Email") String Email,@HeaderParam("Password") String Password) {
     	if(!verifLogin(User_Id)){
              return Response.status(Response.Status.BAD_REQUEST)
-                                    .entity("Utilisateur existe déja")
+                                    .entity(jsonMe("Utilisateur existe déja"))
                                     .build(); 
         }
         User u=new User(User_Id,First_Name,Last_Name,Birth_Year,Gender,Email,Password,true);
         if(u.newCompte()){
              return Response.status(Response.Status.CREATED)
-                     .entity("Compte crée").build();
+                     .entity(jsonMe("Compte crée")).build();
         }
   
         return Response.status(Response.Status.EXPECTATION_FAILED)
-                                    .entity("Erreur BD")
+                                    .entity(jsonMe("Erreur BD"))
                                     .build(); 
   
     }
@@ -69,6 +71,13 @@ public class Inscription {
 		//MenuLoginController.setError(err,"Nom utilisateur erroné");
 		return rep;
 }
+     
+     public String jsonMe(String msg){
+                                 JsonObject jsonObject = Json.createObjectBuilder()
+                .add("Message", msg)
+                .build();
+                                 return jsonObject.toString();
+     }
     
 
   

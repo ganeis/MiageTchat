@@ -22,11 +22,14 @@ public class Appli extends Application {
     }
     
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(start.Connexion.class);
+        resources.add(DAO.service.TchatFacadeREST.class);
+        resources.add(DAO.service.UserFacadeREST.class);
+        resources.add(filtre.AuthenticationFilter.class);
         resources.add(start.Compte.class);
+        resources.add(start.Connexion.class);
         resources.add(start.Inscription.class);
-        resources.add(start.Utilisateurs.class);
         resources.add(start.Message.class);
+        resources.add(start.Utilisateurs.class);
     }
     
 }
