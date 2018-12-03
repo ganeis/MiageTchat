@@ -9,7 +9,9 @@ import DAO.DataBaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.json.JsonObject;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -65,14 +67,15 @@ public class Tchat {
          Connection conn=DataBaseConnection.ConnexionBD();
         try {PreparedStatement ps=conn.prepareStatement("Select * FROM Tchat WHERE MsgId>'"+msgId+"'");
         ResultSet rs=ps.executeQuery();
-        if(rs.isBeforeFirst()){
+        if(!rs.first()){
             return 2;
         }
 		while(rs.next()){
 				Messages m=new Messages();
 				m.setMsgId(rs.getInt(1));
-				m.setText(rs.getString(2));
-				m.setDate_Hour(rs.getDate(3));
+				m.setText(rs.getString(2));                              
+                                Date d=rs.getTimestamp(3);
+				m.setDate_Hour(d);
 				m.setAuthor(rs.getString(4));
                                list_message.add(m);
 				
@@ -106,14 +109,14 @@ public class Tchat {
         this.list_message = list_message;
     }
     
-    public String jsonMe(){
+    public JSONObject jsonMe(){
          JSONArray ja = new JSONArray();
         for(Messages m:list_message){
-            JsonObject o=m.jsonMe();
+            JSONObject o=m.jsonMe();
             ja.put(o);
         }
         JSONObject mainObj = new JSONObject();  
         mainObj.put("Messages", ja);
-        return mainObj.toString();
+        return mainObj;
     }
 }

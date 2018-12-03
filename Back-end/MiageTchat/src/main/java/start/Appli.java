@@ -29,6 +29,7 @@ public class Appli extends Application {
         resources.add(start.Connexion.class);
         resources.add(start.Inscription.class);
         resources.add(start.Message.class);
+        resources.add(start.Ressource.class);
         resources.add(start.Utilisateurs.class);
     }
     

@@ -9,6 +9,7 @@ import DAO.DataBaseConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import org.json.JSONObject;
 
 /**
  *
@@ -128,7 +129,7 @@ public class User {
     public boolean GetCompte(String user){
         User o1=new User();
         Connection conn=DataBaseConnection.ConnexionBD();
-        try {PreparedStatement ps=conn.prepareStatement("Select * FROM User WHERE User_Id='"+user+"'");
+        try {PreparedStatement ps=conn.prepareStatement("SELECT * FROM User WHERE User_Id='"+user+"'");
         ResultSet rs=ps.executeQuery();
 		while(rs.next()){
 				
@@ -185,4 +186,18 @@ public class User {
 }
         return true;
     }
+    
+     public JSONObject jsonMe(){
+                                 JSONObject jo = new JSONObject();
+                jo.put("User_Id", User_Id);
+                                         jo.put("First_Name", First_Name);
+                                         jo.put("Last_Name", Last_Name);
+                                         jo.put("Birth_Year", Birth_Year);
+                                          jo.put("Gender", Gender);
+                                           jo.put("Email", Mail);
+                                            jo.put("Password", Password);
+     
+                                 return jo;
+            }
 }
+     

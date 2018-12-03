@@ -26,7 +26,7 @@ public class DataBaseConnection {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             System.out.println("avant Connexion à la base de données de MiageTchat");
-            Connection con=DriverManager.getConnection("jdbc:mysql://mysql-miagetchat.alwaysdata.net/miagetchat_miagetchat","171419","azerty");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:8889/MiageTchat","root","root");
             System.out.println("Connexion à la base de données de MiageTchat");
             return con;
             

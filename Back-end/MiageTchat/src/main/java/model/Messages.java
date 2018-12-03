@@ -8,12 +8,13 @@ package model;
 
 import DAO.DataBaseConnection;
 import java.sql.Connection;
-import java.util.Calendar;
-import java.sql.Date;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import javax.json.Json;
-import javax.json.JsonObject;
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import org.json.JSONObject;
 
 /**
  *
@@ -92,6 +93,10 @@ public class Messages {
         return Date_Hour;
     }
 
+    /**
+     *
+     * @param Date_Hour
+     */
     public void setDate_Hour(Date Date_Hour) {
         this.Date_Hour = Date_Hour;
     }
@@ -104,13 +109,19 @@ public class Messages {
         this.Author = Author;
     }
 
-  public JsonObject jsonMe(){
-                                 JsonObject jsonObject = Json.createObjectBuilder()
-                .add("User_Id", Author)
-                                         .add("Message", Text)
-                                         .add("Date_Hour", Date_Hour.toString())
-                                         .add("MsgId", MsgId)
-                .build();
-                                 return jsonObject;
+  public JSONObject jsonMe(){
+                                 JSONObject jo = new JSONObject();
+                jo.put("User_Id", Author);
+                                         jo.put("Message", Text);
+                                         
+
+Format formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+String s = formatter.format(Date_Hour);
+
+
+                                         jo.put("Date_Hour", s);
+                                         jo.put("MsgId", MsgId);
+                
+                                 return jo;
      }
 }

@@ -54,7 +54,7 @@ public class Message {
       int rep=t.getMsg(msgId);
       if(rep==1){
       return Response.status(Response.Status.OK)
-                     .entity(jsonMe(t.jsonMe())).build();
+                     .entity(t.jsonMe().toString()).build();
       }
       if(rep==2){
       return Response.status(Response.Status.NO_CONTENT)

@@ -44,7 +44,7 @@ public class Compte {
       User p=new User();
       if(p.GetCompte(user)){
       return Response.status(Response.Status.OK)
-                     .entity(p).build();
+                     .entity(p.jsonMe().toString()).build();
       }
  
         return Response.status(Response.Status.EXPECTATION_FAILED)
