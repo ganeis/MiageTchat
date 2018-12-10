@@ -117,6 +117,7 @@ public class Messages {
 
 Format formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 String s = formatter.format(Date_Hour);
+System.out.println(s);
 
 
                                          jo.put("Date_Hour", s);

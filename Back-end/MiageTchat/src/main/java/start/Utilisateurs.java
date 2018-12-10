@@ -34,16 +34,17 @@ public class Utilisateurs {
 	@Context
 	SecurityContext sctx;
         
-    @POST
+    @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     @Secured
-    public Response newMsg(@HeaderParam("Message") String msg) {
+    public Response getUser() {
         String user = sctx.getUserPrincipal().getName();
-      Messages p=new Messages();
-      if(p.postMsg(msg,user)){
+      Tchat t=new Tchat();
+      
+      if(t.getUser()){
       return Response.status(Response.Status.OK)
-                     .entity(jsonMe("Votre message a été envoyer")).build();
+                     .entity(t.jsonMeUser().toString()).build();
       }
  
         return Response.status(Response.Status.EXPECTATION_FAILED)
@@ -54,27 +55,24 @@ public class Utilisateurs {
     }
     
     @GET
+    @Path("/Online")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     @Secured
-    public Response getMsg(@HeaderParam("MsgId") Integer msgId) {
+    public Response getUserOn() {
          // String user = sctx.getUserPrincipal().getName();
+         String user = sctx.getUserPrincipal().getName();
       Tchat t=new Tchat();
-      int rep=t.getMsg(msgId);
-      if(rep==1){
+      
+      if(t.getUserOn()){
       return Response.status(Response.Status.OK)
-                     .entity(t.jsonMe()).build();
-      }
-      if(rep==2){
-      return Response.status(Response.Status.NO_CONTENT)
-                     .entity(jsonMe("Pas de nouveau message")).build();
+                     .entity(t.jsonMeUser().toString()).build();
       }
  
         return Response.status(Response.Status.EXPECTATION_FAILED)
                                     .entity(jsonMe("Erreur BD"))
                                     .build(); 
   
-        
         
         
     }
