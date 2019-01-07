@@ -41,7 +41,7 @@ public class Messages {
     public int getMax(){
         int rep=0;
         Connection conn=DataBaseConnection.ConnexionBD();
-        try {PreparedStatement ps=conn.prepareStatement("SELECT MAX(MsgId) FROM Tchat");
+        try {PreparedStatement ps=conn.prepareStatement("SELECT MAX(MsgId) FROM \"Tchat\"");
 		ResultSet rs=ps.executeQuery();
                 while(rs.next()){
                     rep=rs.getInt(1);
@@ -59,7 +59,7 @@ public class Messages {
     }
     public boolean postMsg(String msg,String author){
          Connection conn=DataBaseConnection.ConnexionBD();
-		try {PreparedStatement ps=conn.prepareStatement("insert into Tchat (Text,Author) values (?,?)");
+		try {PreparedStatement ps=conn.prepareStatement("insert into [Tchat] (Text,Author) values (?,?)");
 		ps.setString(1, msg);
 		ps.setString(2,author);
 		ps.executeUpdate();

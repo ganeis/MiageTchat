@@ -55,7 +55,7 @@ public class Inscription {
 		Connection conn=DataBaseConnection.ConnexionBD();
 		boolean rep=true;
 		try {
-		PreparedStatement ps=conn.prepareStatement("SELECT `User_Id` FROM `User`");
+		PreparedStatement ps=conn.prepareStatement("SELECT \"User_Id\" FROM \"User\"");
 		
 		ResultSet rs=ps.executeQuery();
 		while(rs.next()){

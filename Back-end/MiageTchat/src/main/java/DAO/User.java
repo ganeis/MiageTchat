@@ -40,59 +40,34 @@ public class User implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 500)
+    @Size(min = 1, max = 1)
     @Column(name = "User_Id")
     private String userId;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 500)
+    @Size(max = 2147483647)
     @Column(name = "First_Name")
     private String firstName;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 500)
+    @Size(max = 2147483647)
     @Column(name = "Last_Name")
     private String lastName;
-    @Basic(optional = false)
-    @NotNull
     @Column(name = "Birth_Year")
-    private int birthYear;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 500)
+    private Integer birthYear;
+    @Size(max = 2147483647)
     @Column(name = "Gender")
     private String gender;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 500)
+    @Size(max = 2147483647)
     @Column(name = "Mail")
     private String mail;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 1500)
+    @Size(max = 2147483647)
     @Column(name = "Password")
     private String password;
-    @Basic(optional = false)
-    @NotNull
     @Column(name = "Status")
-    private boolean status;
+    private Short status;
 
     public User() {
     }
 
     public User(String userId) {
         this.userId = userId;
-    }
-
-    public User(String userId, String firstName, String lastName, int birthYear, String gender, String mail, String password, boolean status) {
-        this.userId = userId;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.birthYear = birthYear;
-        this.gender = gender;
-        this.mail = mail;
-        this.password = password;
-        this.status = status;
     }
 
     public String getUserId() {
@@ -119,11 +94,11 @@ public class User implements Serializable {
         this.lastName = lastName;
     }
 
-    public int getBirthYear() {
+    public Integer getBirthYear() {
         return birthYear;
     }
 
-    public void setBirthYear(int birthYear) {
+    public void setBirthYear(Integer birthYear) {
         this.birthYear = birthYear;
     }
 
@@ -151,11 +126,11 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public boolean getStatus() {
+    public Short getStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
+    public void setStatus(Short status) {
         this.status = status;
     }
 

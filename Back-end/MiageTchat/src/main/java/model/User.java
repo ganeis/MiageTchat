@@ -42,7 +42,7 @@ public class User {
     
     public boolean newCompte(){
         Connection conn=DataBaseConnection.ConnexionBD();
-		try {PreparedStatement ps=conn.prepareStatement("insert into User (User_Id,First_Name,Last_Name,Birth_Year,Gender,Mail,Password,Status) values (?,?,?,?,?,?,?,?)");
+		try {PreparedStatement ps=conn.prepareStatement("insert into [User] (User_Id,First_Name,Last_Name,Birth_Year,Gender,Mail,Password,Status) values (?,?,?,?,?,?,?,?)");
 		ps.setString(1, User_Id);
 		ps.setString(2,First_Name);//level toujours 0
 		ps.setString(3,Last_Name);
@@ -129,7 +129,7 @@ public class User {
     public boolean GetCompte(String user){
         User o1=new User();
         Connection conn=DataBaseConnection.ConnexionBD();
-        try {PreparedStatement ps=conn.prepareStatement("SELECT * FROM User WHERE User_Id='"+user+"'");
+        try {PreparedStatement ps=conn.prepareStatement("SELECT * FROM \"User\" WHERE User_Id='"+user+"'");
         ResultSet rs=ps.executeQuery();
 		while(rs.next()){
 				
@@ -159,7 +159,7 @@ public class User {
         Connection conn=DataBaseConnection.ConnexionBD();
                 
 		try{
-		PreparedStatement ps=conn.prepareStatement("UPDATE `User` SET `First_Name`='"+First_Name+",`Last_Name`='"+Last_Name+",`Birth_Year`='"+Birth_Year+",`Gender`='"+Gender+",`Mail`='"+Mail+",`Password`='"+Password+"'WHERE User_Id='"+user+"'");
+		PreparedStatement ps=conn.prepareStatement("UPDATE \"User\" SET \"First_Name\"='"+First_Name+",\"Last_Name\"='"+Last_Name+",\"Birth_Year\"='"+Birth_Year+",\"Gender\"='"+Gender+",\"Mail\"='"+Mail+",\"Password\"='"+Password+"'WHERE User_Id='"+user+"'");
 		ps.executeUpdate();
 	
 		ps.close();
@@ -175,7 +175,7 @@ public class User {
          Connection conn=DataBaseConnection.ConnexionBD();
                 
 		try{
-		PreparedStatement st = conn.prepareStatement("DELETE FROM User WHERE User_Id = ?");
+		PreparedStatement st = conn.prepareStatement("DELETE FROM \"User\" WHERE User_Id = ?");
                 st.setString(1,id);
                 st.executeUpdate(); 
                 st.close();

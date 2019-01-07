@@ -7,11 +7,12 @@ package model;
 
 import DAO.DataBaseConnection;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
+
 import javax.json.JsonObject;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -66,7 +67,7 @@ public class Tchat {
         //return 1 si nouveau msg
         //return 2 si pas de nouveau msg
          Connection conn=DataBaseConnection.ConnexionBD();
-        try {PreparedStatement ps=conn.prepareStatement("SELECT * FROM Tchat WHERE MsgId>'"+msgId+"'");
+        try {PreparedStatement ps=conn.prepareStatement("SELECT * FROM \"Tchat\" WHERE MsgId>'"+msgId+"'");
         ResultSet rs=ps.executeQuery();
         if(!rs.first()){
             return 2;
@@ -75,7 +76,8 @@ public class Tchat {
 				Messages m=new Messages();
 				m.setMsgId(rs.getInt(1));
 				m.setText(rs.getString(2));                              
-                                Date d=rs.getTimestamp(3);
+                                Date dp=rs.getDate(3);
+                                java.util.Date d = new java.util.Date(dp.getTime());
 				m.setDate_Hour(d);
 				m.setAuthor(rs.getString(4));
                                list_message.add(m);
@@ -112,7 +114,7 @@ public class Tchat {
     
     public boolean getUser(){
           Connection conn=DataBaseConnection.ConnexionBD();
-        try {PreparedStatement ps=conn.prepareStatement("SELECT User_Id FROM User");
+        try {PreparedStatement ps=conn.prepareStatement("SELECT \"User_Id\" FROM \"User\"");
         ResultSet rs=ps.executeQuery();
         
 		while(rs.next()){
@@ -135,7 +137,7 @@ public class Tchat {
     
      public boolean getUserOn(){
           Connection conn=DataBaseConnection.ConnexionBD();
-        try {PreparedStatement ps=conn.prepareStatement("SELECT User_Id FROM User WHERE Status='"+1+"'");
+        try {PreparedStatement ps=conn.prepareStatement("SELECT \"User_Id\" FROM \"User\" WHERE Status='"+1+"'");
         ResultSet rs=ps.executeQuery();
         
 		while(rs.next()){

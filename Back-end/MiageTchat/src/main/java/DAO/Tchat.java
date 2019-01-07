@@ -10,8 +10,6 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -39,23 +37,19 @@ public class Tchat implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "MsgId")
-    private Integer msgId;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 2000)
+    @Column(name = "MsgId")
+    private Integer msgId;
+    @Size(max = 2147483647)
     @Column(name = "Text")
     private String text;
     @Basic(optional = false)
     @NotNull
     @Column(name = "Date")
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date date;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 500)
+    @Size(max = 150)
     @Column(name = "Author")
     private String author;
 
@@ -66,11 +60,9 @@ public class Tchat implements Serializable {
         this.msgId = msgId;
     }
 
-    public Tchat(Integer msgId, String text, Date date, String author) {
+    public Tchat(Integer msgId, Date date) {
         this.msgId = msgId;
-        this.text = text;
         this.date = date;
-        this.author = author;
     }
 
     public Integer getMsgId() {

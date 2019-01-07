@@ -103,7 +103,7 @@ public class Connexion {
 		Connection conn=bd.ConnexionBD();
 		boolean rep=true;
 		try {
-		PreparedStatement ps=conn.prepareStatement("SELECT `User_Id` FROM `User`");
+		PreparedStatement ps=conn.prepareStatement("SELECT \"User_Id\" FROM \"User\"");
 		
 		ResultSet rs=ps.executeQuery();
 		while(rs.next()){
@@ -127,7 +127,7 @@ public class Connexion {
 
 		boolean rep=false;
 		try {
-		PreparedStatement ps=conn.prepareStatement("SELECT `Password` FROM `User`WHERE User_Id='"+user+"'");
+		PreparedStatement ps=conn.prepareStatement("SELECT \"Password\" FROM \"User\" WHERE User_Id='"+user+"'");
 		
 		ResultSet rs=ps.executeQuery();
 		while(rs.next()){
@@ -155,7 +155,7 @@ public class Connexion {
 		Connection conn=DataBaseConnection.ConnexionBD();
                 
 		try{
-		PreparedStatement ps=conn.prepareStatement("UPDATE `User` SET `Status`='"+1+"'WHERE User_Id='"+user+"'");
+		PreparedStatement ps=conn.prepareStatement("UPDATE \"User\" SET \"Status\"='"+1+"'WHERE User_Id='"+user+"'");
 		ps.executeUpdate();
 	
 		ps.close();
