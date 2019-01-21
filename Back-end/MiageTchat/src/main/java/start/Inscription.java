@@ -33,7 +33,7 @@ public class Inscription {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response creeCompte(@HeaderParam("User_Id") String User_Id,@HeaderParam("First_Name") String First_Name,@HeaderParam("Last_Name") String Last_Name,@HeaderParam("Birth_Year") Integer Birth_Year,@HeaderParam("Gender") String Gender,@HeaderParam("Email") String Email,@HeaderParam("Password") String Password) {
+    public Response creeCompte(@HeaderParam("UserId") String User_Id,@HeaderParam("First_Name") String First_Name,@HeaderParam("Last_Name") String Last_Name,@HeaderParam("Birth_Year") Integer Birth_Year,@HeaderParam("Gender") String Gender,@HeaderParam("Email") String Email,@HeaderParam("Password") String Password) {
     	if(!verifLogin(User_Id)){
              return Response.status(Response.Status.BAD_REQUEST)
                                     .entity(jsonMe("Utilisateur existe déja"))

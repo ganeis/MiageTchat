@@ -1,6 +1,7 @@
 package start;
 
 import DAO.DataBaseConnection;
+import annotation.Secured;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,6 +17,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.ws.rs.HeaderParam;
+import javax.ws.rs.POST;
 import javax.ws.rs.core.MediaType;
 
 //import com.madx.auth.credentials.Credentials;
@@ -27,7 +29,6 @@ import model.Messages;
  * @author ganeistan
  */
 @Path("/Connexion")
-@Stateless( name = "RestAuthResource", mappedName = "ejb/RestAuthResource" )
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class Connexion {
@@ -45,7 +46,7 @@ public class Connexion {
 	@GET
         @Produces(MediaType.APPLICATION_JSON)
         @Consumes(MediaType.APPLICATION_JSON)
-	public Response authenticateUser(@HeaderParam("username") String username,@HeaderParam("password") String password) {
+	public Response authenticateUser(@HeaderParam("UserId") String username,@HeaderParam("Password") String password) {
              
 		try {
                        System.out.print(username);
@@ -74,6 +75,22 @@ public class Connexion {
 			return Response.status(Response.Status.UNAUTHORIZED).build();
 		}      
 	}
+        
+    @GET
+    @Path("/Off")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Secured
+    public Response deconnection() throws SQLException, ClassNotFoundException {
+        String user = sctx.getUserPrincipal().getName();
+        if(updateStatus(user,0)){
+        return Response.status(Response.Status.OK)
+                     .entity(jsonMe("Vous étes bien déconnecter")).build();
+        }
+        return Response.status(Response.Status.EXPECTATION_FAILED)
+                                    .entity(jsonMe("Erreur api"))
+                                    .build(); 
+    }
 
 	private boolean authenticate(String username, String password) throws Exception {
 		boolean rep=false;
@@ -132,7 +149,7 @@ public class Connexion {
 		ResultSet rs=ps.executeQuery();
 		while(rs.next()){
 			if(rs.getString(1).equals(a)){
-				updateStatus(user);
+				updateStatus(user,1);
 				return true;
 				
 			};
@@ -150,20 +167,22 @@ public class Connexion {
                 .build();
                                  return jsonObject.toString();
      }
-        public static void updateStatus(String user) throws SQLException, ClassNotFoundException{
+        public static boolean updateStatus(String user,Integer x) throws SQLException, ClassNotFoundException{
              System.out.print(user);
 		Connection conn=DataBaseConnection.ConnexionBD();
                 
 		try{
-		PreparedStatement ps=conn.prepareStatement("UPDATE \"User\" SET \"Status\"='"+1+"'WHERE User_Id='"+user+"'");
+		PreparedStatement ps=conn.prepareStatement("UPDATE \"User\" SET \"Status\"='"+x+"'WHERE User_Id='"+user+"'");
 		ps.executeUpdate();
 	
 		ps.close();
 		} catch (Exception e) {
 		System.out.println(e);
+                
 		e.printStackTrace();
+                return false;
 }
-		
+return true;		
 }
 
 }

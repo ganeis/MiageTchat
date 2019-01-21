@@ -59,7 +59,7 @@ public class Compte {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     @Secured
-    public Response updateCompte(@HeaderParam("User_Id") String User_Id,@HeaderParam("First_Name") String First_Name,@HeaderParam("Last_Name") String Last_Name,@HeaderParam("Birth_Year") Integer Birth_Year,@HeaderParam("Gender") String Gender,@HeaderParam("Email") String Email,@HeaderParam("Password") String Password) {
+    public Response updateCompte(@HeaderParam("UserId") String User_Id,@HeaderParam("First_Name") String First_Name,@HeaderParam("Last_Name") String Last_Name,@HeaderParam("Birth_Year") Integer Birth_Year,@HeaderParam("Gender") String Gender,@HeaderParam("Email") String Email,@HeaderParam("Password") String Password) {
     	String user = sctx.getUserPrincipal().getName();
       User p=new User();
       p.setFirst_Name(First_Name);
@@ -89,7 +89,7 @@ public class Compte {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     @Secured
-    public Response deleteCompte(@HeaderParam("User_Id") String user) {
+    public Response deleteCompte(@HeaderParam("UserId") String user) {
      //String user = sctx.getUserPrincipal().getName();
       User p=new User();
       if(p.DeleteCompte(user)){

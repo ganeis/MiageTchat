@@ -46,6 +46,7 @@ public class Ressource {
     public Response getResources() {
         JSONArray ja = new JSONArray();
         ja.put(myRessource("http://miagetchat.ovh:8080/MiageTchat/webapi/Connexion","Connexion","GET"));
+        ja.put(myRessource("http://miagetchat.ovh:8080/MiageTchat/webapi/Connexion/Off","Déconnexion","GET"));
         ja.put(myRessource("http://miagetchat.ovh:8080/MiageTchat/webapi/Inscription","Inscription","POST"));
         ja.put(myRessource("http://miagetchat.ovh:8080/MiageTchat/webapi/Compte","GetCompte","GET"));
         ja.put(myRessource("http://miagetchat.ovh:8080/MiageTchat/webapi/Compte","UpdateCompte","PUT"));

@@ -10,7 +10,6 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import javax.json.JsonObject;
@@ -69,10 +68,11 @@ public class Tchat {
          Connection conn=DataBaseConnection.ConnexionBD();
         try {PreparedStatement ps=conn.prepareStatement("SELECT * FROM \"Tchat\" WHERE MsgId>'"+msgId+"'");
         ResultSet rs=ps.executeQuery();
-        if(!rs.first()){
+        if(!rs.next()){
             return 2;
         }
-		while(rs.next()){
+        
+		do{
 				Messages m=new Messages();
 				m.setMsgId(rs.getInt(1));
 				m.setText(rs.getString(2));                              
@@ -83,7 +83,7 @@ public class Tchat {
                                list_message.add(m);
 				
 
-					};
+					}while(rs.next());
 					
             ps.close();
 
