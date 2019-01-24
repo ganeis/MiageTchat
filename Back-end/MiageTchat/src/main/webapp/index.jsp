@@ -5,37 +5,32 @@
     </head>
 <body>
 <h2>Les ressources disponibles sur cet WebApi</h2>
+<h3>Les services offerts sont disponibles en appelant http://miagetchat.ovh:8080/MiageTchat/webapi/Ressource </h3>
 <div>
 
     <div>
 <article>
 <ul>
-  <li>Return : http code + les mÃ©thodes format json
+  <li>Return : http code + les méthodes format json
     <ul>
-      <li>Url : <a href="http://localhost:5000/MiageTchat/Ressource" rel="nofollow">http://localhost:5000/MiageTchat/Ressource</a></li>
+      <li>Url : <a href="http://miagetchat.ovh:8080/MiageTchat/webapi/Ressource" rel="nofollow">http://miagetchat.ovh:8080/MiageTchat/webapi/Ressource</a></li>
       <li>Method : <code>GET</code></li>
       <li>Required :</li>
       <li>Success Response :
         <ul>
           <li>Code : <code>200</code></li>
           <li>Content : {
-            â€œFunctionâ€: [
-            {
-            â€œLienâ€:  â€œhttp://localhost:5000/MiageTchat/Connexionâ€,
-            â€œMot-cleâ€: â€œConnexionâ€,
-            â€œVerbeâ€ :â€GETâ€
-            },
-            {
-            â€œLienâ€:  â€œhttp://localhost:5000/MiageTchat/Inscriptionâ€,
-            â€œMot-cleâ€: â€œInscriptionâ€,
-            â€œVerbeâ€:â€POSTâ€
-            },
-            {
-            â€œLienâ€:  â€œhttp://localhost:5000/MiageTchat/Compteâ€,
-            â€œMot-cleâ€: â€œGetCompteâ€,
-            â€œVerbeâ€: â€œGETâ€
-            }
-            ]
+            œ{"Function":[
+            {"Lien":"http://miagetchat.ovh:8080/MiageTchat/webapi/Connexion","Mot-clé":"Connexion","Verbe":"GET"},
+            {"Lien":"http://miagetchat.ovh:8080/MiageTchat/webapi/Connexion/Off","Mot-clé":"Déconnexion","Verbe":"GET"},
+            {"Lien":"http://miagetchat.ovh:8080/MiageTchat/webapi/Inscription","Mot-clé":"Inscription","Verbe":"POST"},
+            {"Lien":"http://miagetchat.ovh:8080/MiageTchat/webapi/Compte","Mot-clé":"GetCompte","Verbe":"GET"},
+            {"Lien":"http://miagetchat.ovh:8080/MiageTchat/webapi/Compte","Mot-clé":"UpdateCompte","Verbe":"POST"},
+            {"Lien":"http://miagetchat.ovh:8080/MiageTchat/webapi/Compte","Mot-clé":"DeleteCompte","Verbe":"DELETE"},
+            {"Lien":"http://miagetchat.ovh:8080/MiageTchat/webapi/Message","Mot-clé":"PostMessage","Verbe":"PUT"},
+            {"Lien":"http://miagetchat.ovh:8080/MiageTchat/webapi/Message","Mot-clé":"GetMessage","Verbe":"GET"},
+            {"Lien":"http://miagetchat.ovh:8080/MiageTchat/webapi/Utilisateurs","Mot-clé":"GetAllUsers","Verbe":"GET"},
+            {"Lien":"http://miagetchat.ovh:8080/MiageTchat/webapi/Utilisateurs/Online","Mot-clé":"GetUsersOnline","Verbe":"GET"}]}
             }</li>
         </ul>
       </li>
@@ -48,13 +43,13 @@
     </ul>
   </li>
 </ul>
-<h2><a id="user-content-accÃ¨s" class="anchor" aria-hidden="true" href="#accÃ¨s"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>AccÃ¨s</h2>
+<h2><a id="user-content-accÃ¨s" class="anchor" aria-hidden="true" href="#accès"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Accès</h2>
 <h3><a id="user-content-connexion" class="anchor" aria-hidden="true" href="#connexion"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Connexion</h3>
 <ul>
   <li>Return : <code>un bearer token ou une http code erreur</code></li>
-  <li>Url :<a href="http://localhost:5000/MiageTchat/Connexion" rel="nofollow">http://localhost:5000/MiageTchat/Connexion</a></li>
+  <li>Url :<a href="http://miagetchat.ovh:8080/MiageTchat/webapi/Connexion" rel="nofollow">http://miagetchat.ovh:8080/MiageTchat/webapi/Connexion</a></li>
   <li>Method : <code>GET</code></li>
-  <li>Required : <code>Id=[String]</code>  <code>Password=[String]</code></li>
+  <li>Required : <code>UserId=[String]</code>  <code>Password=[String]</code></li>
   <li>Success Response :
     <ul>
       <li>Code : <code>200</code></li>
@@ -78,7 +73,7 @@
 <h3><a id="user-content-inscription" class="anchor" aria-hidden="true" href="#inscription"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Inscription</h3>
 <ul>
   <li>Return : http code</li>
-  <li>Url : <a href="http://localhost:5000/MiageTchat/Inscription" rel="nofollow">http://localhost:5000/MiageTchat/Inscription</a></li>
+  <li>Url : <a href="http://miagetchat.ovh:8080/MiageTchat/webapi/Inscription" rel="nofollow">http://miagetchat.ovh:8080/MiageTchat/webapi/Inscription</a></li>
   <li>Method : <code>POST</code></li>
   <li>Required :
     <code>UserId=[String]</code>
@@ -91,13 +86,13 @@
   <li>Success Response :
     <ul>
       <li>Code : <code>200</code></li>
-      <li>Content : <code>FÃ©licitations, vous Ãªtes bien inscrit</code></li>
+      <li>Content : <code>Félicitations, vous étes bien inscrit</code></li>
     </ul>
   </li>
   <li>Error Response 1 :
     <ul>
       <li>Code : <code>400 BAD REQUEST</code></li>
-      <li>Content : <code>ID dÃ©ja utilisÃ©</code></li>
+      <li>Content : <code>ID déja utilisé</code></li>
     </ul>
   </li>
 </ul>
@@ -105,7 +100,7 @@
 <h3><a id="user-content-getcompte" class="anchor" aria-hidden="true" href="#getcompte"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GetCompte</h3>
 <ul>
   <li>Return : http code + user data in json</li>
-  <li>Url : <a href="http://localhost:5000/MiageTchat/Compte" rel="nofollow">http://localhost:5000/MiageTchat/Compte</a></li>
+  <li>Url : <a href="http://miagetchat.ovh:8080/MiageTchat/webapi/Compte" rel="nofollow">http://miagetchat.ovh:8080/MiageTchat/webapi/Compte</a></li>
   <li>Method : <code>GET</code></li>
   <li>Required :
     <code>Bearer Token</code></li>
@@ -124,7 +119,7 @@
 <h3><a id="user-content-updatecompte" class="anchor" aria-hidden="true" href="#updatecompte"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UpdateCompte</h3>
 <ul>
   <li>Return : http code + message</li>
-  <li>Url : <a href="http://localhost:5000/MiageTchat/Compte" rel="nofollow">http://localhost:5000/MiageTchat/Compte</a></li>
+  <li>Url : <a href="http://miagetchat.ovh:8080/MiageTchat/webapi/Compte" rel="nofollow">http://miagetchat.ovh:8080/MiageTchat/webapi/Compte</a></li>
   <li>Method : <code>PUT</code></li>
   <li>Required :
     <code>Bearer Token</code>
@@ -138,7 +133,7 @@
   <li>Success Response :
     <ul>
       <li>Code : <code>200</code></li>
-      <li>Content : <code>Compte mise Ã  jour</code></li>
+      <li>Content : <code>Compte mise à jour</code></li>
     </ul>
   </li>
   <li>Error Response 1 :
@@ -150,7 +145,7 @@
 <h3><a id="user-content-deletecompte" class="anchor" aria-hidden="true" href="#deletecompte"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>DeleteCompte</h3>
 <ul>
   <li>Return : http code + liste des photos</li>
-  <li>Url : <a href="http://localhost:5000/MiageTchat/Compte" rel="nofollow">http://localhost:5000/MiageTchat/Compte</a></li>
+  <li>Url : <a href="http://miagetchat.ovh:8080/MiageTchat/webapi/Compte" rel="nofollow">http://miagetchat.ovh:8080/MiageTchat/webapi/Compte</a></li>
   <li>Method : <code>DELETE</code></li>
   <li>Required :
     <code>Bearer Token</code>
@@ -173,7 +168,7 @@
 <ul>
   <li>Description : Pour envoyer un message sur le fil public</li>
   <li>Return : http code</li>
-  <li>Url : <a href="http://localhost:5000/MiageTchat/Message" rel="nofollow">http://localhost:5000/MiageTchat/Message</a></li>
+  <li>Url : <a href="http://miagetchat.ovh:8080/MiageTchat/webapi/Message" rel="nofollow">http://miagetchat.ovh:8080/MiageTchat/webapi/Message</a></li>
   <li>Method : <code>POST</code></li>
   <li>Required :
     <code>Bearer Token</code>
@@ -181,7 +176,7 @@
   <li>Success Response :
     <ul>
       <li>Code : <code>200</code></li>
-      <li>Content : <code>Votre message a Ã©tÃ© envoyer</code></li>
+      <li>Content : <code>Votre message a été envoyer</code></li>
     </ul>
   </li>
   <li>Error Response 1 :
@@ -194,7 +189,7 @@
 <h3><a id="user-content-getmessage" class="anchor" aria-hidden="true" href="#getmessage"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GetMessage</h3>
 <ul>
   <li>Return : http code + message</li>
-  <li>Url : <a href="http://localhost:5000/MiageTchat/Message" rel="nofollow">http://localhost:5000/MiageTchat/Message</a></li>
+  <li>Url : <a href="http://miagetchat.ovh:8080/MiageTchat/webapi/Message" rel="nofollow">http://miagetchat.ovh:8080/MiageTchat/webapi/Message</a></li>
   <li>Method : <code>GET</code></li>
   <li>Required :
     <code>Bearer Token</code>
@@ -205,24 +200,24 @@
       <li>Content :</li>
     </ul>
     <p>{
-      â€œMessagesâ€: [
+      Messages: [
       {
-      â€œUserIdâ€:  â€œInkaranâ€,
-      â€œMessageâ€: â€œSalutâ€,
-      â€œDate_Hourâ€:â€27/06/06 21:36â€,
-      â€œMsgIdâ€:â€33â€
+      UserId:  œInkaran,
+      œMessage: œSalut,
+      œDate_Hour:27/06/06 21:36,
+      œMsgId:33
       },
       {
-      â€œUserIdâ€:  â€œGaneisâ€,
-      â€œMessageâ€: â€œSuperâ€,
-      â€œDate_Hourâ€:â€27/06/06 21:37â€,
-      â€œMsgIdâ€:â€34â€
+      œUserId:  œGaneis,
+      œMessage: œSuper,
+      œDate_Hour:27/06/06 21:37,
+      œMsgId:34
       },
       {
-      â€œUserIdâ€:  â€œInkaranâ€,
-      â€œMessageâ€: â€œSavaâ€,
-      â€œDate_Hourâ€:â€27/06/06 21:39â€,
-      â€œMsgIdâ€:â€35â€
+      œUserId:  œInkaran,
+      œMessage: œSava,
+      œDate_Hour:27/06/06 21:39,
+      œMsgIdâ€:35
       }
       ]
       }</p>
@@ -244,7 +239,7 @@
 <h3><a id="user-content-getallusers" class="anchor" aria-hidden="true" href="#getallusers"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GetAllUsers</h3>
 <ul>
   <li>Return : http code + tous users</li>
-  <li>Url : <a href="http://localhost:5000/MiageTchat/Utilisateurs" rel="nofollow">http://localhost:5000/MiageTchat/Utilisateurs</a></li>
+  <li>Url : <a href="http://miagetchat.ovh:8080/MiageTchat/webapi/Utilisateurs" rel="nofollow">http://miagetchat.ovh:8080/MiageTchat/webapi/Utilisateurs</a></li>
   <li>Method : <code>GET</code></li>
   <li>Required :
     <code>Bearer Token</code></li>
@@ -253,15 +248,15 @@
       <li>Code : <code>200</code></li>
       <li>Content :
         {
-        â€œUsersâ€: [
+        œUsers: [
         {
-        â€œUserIdâ€:  â€œInkaranâ€
+        œUserId:  œInkaran
         <p>},
           {
-          â€œUserIdâ€:  â€œGaneisâ€</p>
+          œUserId:  Ganeis</p>
         <p>},
           {
-          â€œUserIdâ€:  â€œKevinâ€</p>
+          œUserId:  œKevin</p>
         <p>}
           ]
           }</p>
@@ -278,7 +273,7 @@
 <h3><a id="user-content-getusersonline" class="anchor" aria-hidden="true" href="#getusersonline"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>GetUsersOnline</h3>
 <ul>
   <li>Return : http code + tous users online</li>
-  <li>Url : <a href="http://localhost:5000/MiageTchat/Utilisateurs/Online" rel="nofollow">http://localhost:5000/MiageTchat/Utilisateurs/Online</a></li>
+  <li>Url : <a href="http://miagetchat.ovh:8080/MiageTchat/webapi/Utilisateurs/Online" rel="nofollow">http://miagetchat.ovh:8080/MiageTchat/webapi/Utilisateurs/Online</a></li>
   <li>Method : <code>GET</code></li>
   <li>Required :
     <code>Bearer Token</code></li>
@@ -287,15 +282,15 @@
       <li>Code : <code>200</code></li>
       <li>Content :
         {
-        â€œUsersâ€: [
+        œUsers: [
         {
-        â€œUserIdâ€:  â€œInkaranâ€
+        œUserId:  œInkaran
         <p>},
           {
-          â€œUserIdâ€:  â€œGaneisâ€</p>
+          œUserId:  œGaneis</p>
         <p>},
           {
-          â€œUserIdâ€:  â€œKevinâ€</p>
+          œUserId:  œKevin</p>
         <p>}
           ]
           }</p>

@@ -41,7 +41,7 @@ Nous avons choisi parmi les projets disponibles (Dames, Jeux etc..),le projet Mi
 ** Ressource
 *** Ressource
   - Return : http code + les méthodes format json
-   - Url : [[http://localhost:5000/MiageTchat/Ressource]]
+   - Url : [[hhttp://miagetchat.ovh:8080/MiageTchat/webapi/Ressource]]
    - Method : =GET=
    - Required :
    - Success Response :
@@ -71,10 +71,10 @@ Nous avons choisi parmi les projets disponibles (Dames, Jeux etc..),le projet Mi
 
 ** Accès
 *** Connexion
-   - Return : =un bearer token ou une http code erreur=
-   - Url :[[http://localhost:5000/MiageTchat/Connexion]]
+   - Return : =un bearer token ou un http code erreur=
+   - Url :[[http://miagetchat.ovh:8080/MiageTchat/webapi/Connexion]]
    - Method : =GET=
-   - Required : =Id=[String]=  =Password=[String]=
+   - Required : =UserId=[String]=  =Password=[String]=
    - Success Response :
      - Code : =200=
      - Content : =Bearer Token=
@@ -86,9 +86,21 @@ Nous avons choisi parmi les projets disponibles (Dames, Jeux etc..),le projet Mi
      - Code : =400 BAD REQUEST=
      - Content : =Mot de passe erroné=
 
+*** Déconnexion
+        - Return : =un http code=
+        - Url :[[http://miagetchat.ovh:8080/MiageTchat/webapi/Connexion/Off]]
+        - Method : =GET=
+        - Required : =Bearer Token=
+        - Success Response :
+          - Code : =200=
+          - Content : =Vous étes déconnecté=
+        - Error Response 1 :
+          - Code : =404 NOT FOUND=
+          - Content : =L'utilisateur n'existe pas=
+
 *** Inscription
    - Return : http code
-   - Url : [[http://localhost:5000/MiageTchat/Inscription]]
+   - Url : [[http://miagetchat.ovh:8080/MiageTchat/webapi/Inscription]]
    - Method : =POST=
    - Required :
           =UserId=[String]=
@@ -109,7 +121,7 @@ Nous avons choisi parmi les projets disponibles (Dames, Jeux etc..),le projet Mi
 ** Compte
 *** GetCompte
    - Return : http code + user data in json
-   - Url : [[http://localhost:5000/MiageTchat/Compte]]
+   - Url : [[http://miagetchat.ovh:8080/MiageTchat/webapi/Compte]]
    - Method : =GET=
    - Required :
            =Bearer Token=
@@ -121,8 +133,8 @@ Nous avons choisi parmi les projets disponibles (Dames, Jeux etc..),le projet Mi
 
 
 *** UpdateCompte
-   - Return : http code + message 
-   - Url : [[http://localhost:5000/MiageTchat/Compte]]
+   - Return : http code + message
+   - Url : [[http://miagetchat.ovh:8080/MiageTchat/webapi/Compte]]
    - Method : =PUT=
    - Required :
           =Bearer Token=
@@ -137,16 +149,16 @@ Nous avons choisi parmi les projets disponibles (Dames, Jeux etc..),le projet Mi
      - Code : =200=
      - Content : =Compte mise à jour=
    - Error Response 1 :
-     - Code : =401 Unauthorized=         
+     - Code : =401 Unauthorized=
 
 *** DeleteCompte
    - Return : http code + liste des photos
-   - Url : [[http://localhost:5000/MiageTchat/Compte]]
+   - Url : [[http://miagetchat.ovh:8080/MiageTchat/webapi/Compte]]
    - Method : =DELETE=
    - Required :
            =Bearer Token=
             =UserId=[String]=
-          
+
    - Success Response :
     - Code : =200=
     - Content : =Votre profil est bien supprimé=
@@ -158,12 +170,12 @@ Nous avons choisi parmi les projets disponibles (Dames, Jeux etc..),le projet Mi
 *** PostMessage
    - Description : Pour envoyer un message sur le fil public
    - Return : http code
-   - Url : [[http://localhost:5000/MiageTchat/Message]]
+   - Url : [[http://miagetchat.ovh:8080/MiageTchat/webapi/Message]]
    - Method : =POST=
    - Required :
      =Bearer Token=
           =Message=[String]=
-          
+
    - Success Response :
      - Code : =200=
      - Content : =Votre message a été envoyer=
@@ -173,14 +185,14 @@ Nous avons choisi parmi les projets disponibles (Dames, Jeux etc..),le projet Mi
 
 *** GetMessage
    - Return : http code + message
-   - Url : [[http://localhost:5000/MiageTchat/Message]]
+   - Url : [[http://miagetchat.ovh:8080/MiageTchat/webapi/Message]]
    - Method : =GET=
    - Required :
           =Bearer Token=
           =MsgId=[Int]=
    - Success Response :
      - Code : =200=
-     - Content : 
+     - Content :
      {
             "Messages": [
                {
@@ -214,7 +226,7 @@ Nous avons choisi parmi les projets disponibles (Dames, Jeux etc..),le projet Mi
 ** Acceuil
 *** GetAllUsers
    - Return : http code + tous users
-   - Url : [[http://localhost:5000/MiageTchat/Utilisateurs]]
+   - Url : [[http://miagetchat.ovh:8080/MiageTchat/webapi/Utilisateurs]]
    - Method : =GET=
    - Required :
           =Bearer Token=
@@ -225,15 +237,15 @@ Nous avons choisi parmi les projets disponibles (Dames, Jeux etc..),le projet Mi
             "Users": [
                {
                 "UserId":  "Inkaran"
-                
+
                },
                {
                 "UserId":  "Ganeis"
-                
+
                },
                {
                "UserId":  "Kevin"
-             
+
                }
             ]
          }
@@ -243,7 +255,7 @@ Nous avons choisi parmi les projets disponibles (Dames, Jeux etc..),le projet Mi
 
 *** GetUsersOnline
    - Return : http code + tous users online
-   - Url : [[http://localhost:5000/MiageTchat/Utilisateurs/Online]]
+   - Url : [[http://miagetchat.ovh:8080/MiageTchat/webapi/Utilisateurs/Online]]
    - Method : =GET=
    - Required :
           =Bearer Token=
@@ -254,15 +266,15 @@ Nous avons choisi parmi les projets disponibles (Dames, Jeux etc..),le projet Mi
             "Users": [
                {
                 "UserId":  "Inkaran"
-                
+
                },
                {
                 "UserId":  "Ganeis"
-                
+
                },
                {
                "UserId":  "Kevin"
-             
+
                }
             ]
          }
