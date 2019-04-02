@@ -1,0 +1,221 @@
+!SESSION 2018-11-17 18:46:07.727 -----------------------------------------------
+eclipse.buildId=4.9.0.I20180906-0745
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/ganeistan/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/ganeistan/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2018-11-17 18:46:24.769
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2018-11-17 18:48:13.836 -----------------------------------------------
+eclipse.buildId=4.9.0.I20180906-0745
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/ganeistan/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/ganeistan/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2018-11-17 18:48:31.220
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jface.text 2 0 2018-11-17 18:57:59.853
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+
+!ENTRY org.eclipse.wst.server.discovery 1 0 2018-11-17 18:59:30.745
+!MESSAGE already installed: org.eclipse.jst.server.generic.jonas4
+
+!ENTRY org.eclipse.wst.server.discovery 1 0 2018-11-17 19:01:26.128
+!MESSAGE already installed: org.eclipse.jst.server.generic.jonas4
+
+!ENTRY org.eclipse.glassfish.tools 4 0 2018-11-17 19:01:47.887
+!MESSAGE deploy is failing=
+!STACK 0
+java.lang.Exception: deploy is failing=Error occurred during deployment: Exception while loading the app : java.lang.IllegalStateException: ContainerBase.addChild: start: org.apache.catalina.LifecycleException: org.apache.catalina.LifecycleException: com.sun.jersey.api.container.ContainerException: The ResourceConfig instance does not contain any root resource classes.. Please see server.log for more details.
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishDeployedDirectory(GlassFishServerBehaviour.java:598)
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishModuleForGlassFishV3(GlassFishServerBehaviour.java:825)
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishModule(GlassFishServerBehaviour.java:785)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModule(ServerBehaviourDelegate.java:1091)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModules(ServerBehaviourDelegate.java:1183)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:987)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.glassfish.tools 4 0 2018-11-17 19:01:47.906
+!MESSAGE cannot Deploy MiageTchat
+!STACK 0
+java.lang.Exception: deploy is failing=Error occurred during deployment: Exception while loading the app : java.lang.IllegalStateException: ContainerBase.addChild: start: org.apache.catalina.LifecycleException: org.apache.catalina.LifecycleException: com.sun.jersey.api.container.ContainerException: The ResourceConfig instance does not contain any root resource classes.. Please see server.log for more details.
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishDeployedDirectory(GlassFishServerBehaviour.java:598)
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishModuleForGlassFishV3(GlassFishServerBehaviour.java:825)
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishModule(GlassFishServerBehaviour.java:785)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModule(ServerBehaviourDelegate.java:1091)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModules(ServerBehaviourDelegate.java:1183)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:987)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.wst.server.core 4 0 2018-11-17 19:02:48.371
+!MESSAGE Server GlassFish 5 [domain1] failed to stop.
+
+!ENTRY org.eclipse.glassfish.tools 4 0 2018-11-17 19:04:30.817
+!MESSAGE deploy is failing=
+!STACK 0
+java.lang.Exception: deploy is failing=Application with name [MiageTchat] is not deployed
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishDeployedDirectory(GlassFishServerBehaviour.java:598)
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishModuleForGlassFishV3(GlassFishServerBehaviour.java:825)
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishModule(GlassFishServerBehaviour.java:785)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModule(ServerBehaviourDelegate.java:1091)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModules(ServerBehaviourDelegate.java:1183)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:987)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.glassfish.tools 4 0 2018-11-17 19:04:30.820
+!MESSAGE cannot Deploy MiageTchat
+!STACK 0
+java.lang.Exception: deploy is failing=Application with name [MiageTchat] is not deployed
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishDeployedDirectory(GlassFishServerBehaviour.java:598)
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishModuleForGlassFishV3(GlassFishServerBehaviour.java:825)
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishModule(GlassFishServerBehaviour.java:785)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModule(ServerBehaviourDelegate.java:1091)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModules(ServerBehaviourDelegate.java:1183)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:987)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 2 2 2018-11-17 19:08:33.495
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.wst.server.core.internal.Server$StopJob
+!SESSION 2018-11-27 20:19:55.366 -----------------------------------------------
+eclipse.buildId=4.9.0.I20180906-0745
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/ganeistan/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/ganeistan/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2018-11-27 20:20:07.225
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.core.jobs 2 2 2018-11-27 20:24:21.649
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.wst.server.core.internal.Server$StopJob
+!SESSION 2018-12-03 21:05:21.307 -----------------------------------------------
+eclipse.buildId=4.9.0.I20180906-0745
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/ganeistan/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/ganeistan/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2018-12-03 21:05:33.219
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.glassfish.tools 4 0 2018-12-03 21:07:34.218
+!MESSAGE deploy is failing=
+!STACK 0
+java.lang.Exception: deploy is failing=Application with name [MiageTchat] is not deployed
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishDeployedDirectory(GlassFishServerBehaviour.java:598)
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishModuleForGlassFishV3(GlassFishServerBehaviour.java:825)
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishModule(GlassFishServerBehaviour.java:785)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModule(ServerBehaviourDelegate.java:1091)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModules(ServerBehaviourDelegate.java:1183)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:987)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.glassfish.tools 4 0 2018-12-03 21:07:34.242
+!MESSAGE cannot Deploy MiageTchat
+!STACK 0
+java.lang.Exception: deploy is failing=Application with name [MiageTchat] is not deployed
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishDeployedDirectory(GlassFishServerBehaviour.java:598)
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishModuleForGlassFishV3(GlassFishServerBehaviour.java:825)
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishModule(GlassFishServerBehaviour.java:785)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModule(ServerBehaviourDelegate.java:1091)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModules(ServerBehaviourDelegate.java:1183)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:987)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.glassfish.tools 4 0 2018-12-03 21:08:51.505
+!MESSAGE deploy is failing=
+!STACK 0
+java.lang.Exception: deploy is failing=Application with name [MiageTchat] is not deployed
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishDeployedDirectory(GlassFishServerBehaviour.java:598)
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishModuleForGlassFishV3(GlassFishServerBehaviour.java:825)
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishModule(GlassFishServerBehaviour.java:785)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModule(ServerBehaviourDelegate.java:1091)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModules(ServerBehaviourDelegate.java:1183)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:987)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.glassfish.tools 4 0 2018-12-03 21:08:51.530
+!MESSAGE cannot Deploy MiageTchat
+!STACK 0
+java.lang.Exception: deploy is failing=Application with name [MiageTchat] is not deployed
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishDeployedDirectory(GlassFishServerBehaviour.java:598)
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishModuleForGlassFishV3(GlassFishServerBehaviour.java:825)
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishModule(GlassFishServerBehaviour.java:785)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModule(ServerBehaviourDelegate.java:1091)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModules(ServerBehaviourDelegate.java:1183)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:987)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.glassfish.tools 4 0 2018-12-03 21:09:14.152
+!MESSAGE deploy is failing=
+!STACK 0
+java.lang.Exception: deploy is failing=Application with name [MiageTchat] is not deployed
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishDeployedDirectory(GlassFishServerBehaviour.java:598)
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishModuleForGlassFishV3(GlassFishServerBehaviour.java:825)
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishModule(GlassFishServerBehaviour.java:785)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModule(ServerBehaviourDelegate.java:1091)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModules(ServerBehaviourDelegate.java:1183)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:987)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.glassfish.tools 4 0 2018-12-03 21:09:14.153
+!MESSAGE cannot Deploy MiageTchat
+!STACK 0
+java.lang.Exception: deploy is failing=Application with name [MiageTchat] is not deployed
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishDeployedDirectory(GlassFishServerBehaviour.java:598)
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishModuleForGlassFishV3(GlassFishServerBehaviour.java:825)
+	at org.eclipse.glassfish.tools.GlassFishServerBehaviour.publishModule(GlassFishServerBehaviour.java:785)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModule(ServerBehaviourDelegate.java:1091)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publishModules(ServerBehaviourDelegate.java:1183)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:987)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3182)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:355)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2019-01-07 20:08:44.674 -----------------------------------------------
+eclipse.buildId=4.9.0.I20180906-0745
+java.version=1.8.0_144
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/ganeistan/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/ganeistan/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2019-01-07 20:08:54.083
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.core.resources 4 566 2019-01-07 20:09:07.632
+!MESSAGE Workspace was not properly initialized or has already shutdown.
